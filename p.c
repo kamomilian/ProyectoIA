@@ -63,14 +63,11 @@ int main(){
       float velocidad = atof(strtok(NULL,"   "));
       int tiempoServicio = atoi(strtok(NULL,"   "));
       int tiempoCarga = atoi(strtok(NULL,"   "));
-      //ins.clientes[cantClientes];
-      //ins.estaciones[cantEstaciones];
       ins.maxTiempo = maxTiempo;
       ins.maxDistancia = maxDistancia;
       ins.velocidad = velocidad;
       ins.tiempoServicio = tiempoServicio;
       ins.tiempoCarga = tiempoCarga;
-      printf("%d\n", tiempoCarga);
     }
     if (fgets(data,100,fp)!=NULL){
       strtok(data,"  ");
@@ -79,8 +76,6 @@ int main(){
       float dCoordenada2 = atof(strtok (NULL,"   "));
       ins.dCoordenada1 = dCoordenada1;
       ins.dCoordenada2 = dCoordenada2;
-      printf("%f\n", ins.dCoordenada1);
-      printf("%f\n", ins.dCoordenada2);
     }
     for (int i=0;i<cantEstaciones;i++){
       if (fgets(data,100,fp)!=NULL){
@@ -90,11 +85,8 @@ int main(){
         float coordenada2 = atof(strtok (NULL,"   "));
         ins.estaciones = malloc(100 * sizeof(esta *));
         ins.estaciones[i].numero = i;
-        printf("%d\n", ins.estaciones[i].numero);
         ins.estaciones[i].coordenada1 = coordenada1;
         ins.estaciones[i].coordenada2 = coordenada2;
-        printf("%f\n", ins.estaciones[i].coordenada1);
-        printf("%f\n", ins.estaciones[i].coordenada2);
       }
     }
     for (int i=0;i<cantClientes;i++){
@@ -108,8 +100,6 @@ int main(){
         printf("%d\n", ins.clientes[i].numero);
         ins.clientes[i].coordenada1 = coordenada1;
         ins.clientes[i].coordenada2 = coordenada2;
-        printf("%f\n", ins.clientes[i].coordenada1);
-        printf("%f\n", ins.clientes[i].coordenada2);
       }
     }
   }
